@@ -1,0 +1,37 @@
+model:
+  name: tinytransformer
+  context_size: 64
+  num_layers: 3
+  num_heads: 8
+  input_dim: 300
+  hidden_dim: 64
+
+training:
+  generate: false
+  seed: 24102000
+  epochs: 50
+  optimizer:
+    name: adam
+    lr: 3e-4
+    weight_decay: 0
+  batch_size: 512
+  logging_interval: 100
+  output_dir: output_context_64_checkpoint
+  patience: 3
+  num_samples: 1024000
+  experiment_name: "part1-pretraining-checkpoint"
+
+visualisation:
+  num_samples: 5
+  repetition_penalty: 1.2
+  temperature: 1
+
+validation:
+  batch_size: 512
+
+dataset:
+  original_dataset: TinyStories_processed
+  name: TinyStories_tokenized_64
+  max_length: 64
+  vocab_file: vocab_dict.json
+  inverse_vocab_file: inverse_vocab_dict.json

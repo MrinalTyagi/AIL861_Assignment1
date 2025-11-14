@@ -1,0 +1,2 @@
+python generate_kv_cache.py --checkpoint_path output_context_64/checkpoints/best_checkpoint_50.pth --temperature 0.7 --beam_width 10 --num_samples 20
+python generate_kv_cache.py --checkpoint_path output_context_64/checkpoints/best_checkpoint_50.pth --temperature 0.7 --beam_width 10 --num_samples 20 --kv_cache
